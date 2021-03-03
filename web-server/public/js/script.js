@@ -1,7 +1,7 @@
 console.log('Client side javascript file is loaded!')
 
 const get_location_and_forcast = (city) => {
-    fetch(` http://localhost:3000/weather?address=${city}`).then((response) => {
+    fetch(`/weather?address=${city}`).then((response) => {
         response.json().then((data) => {
             if (data.error) {
                 first_output.textContent = data.error

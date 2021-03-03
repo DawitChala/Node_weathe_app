@@ -7,7 +7,8 @@ const weatherstack = require('./utils/weatherstack')
 console.log("hih")
 
 const app = express()
-    // Definerer paths for express dirs
+const port = process.env.PORT || 3000;
+// Definerer paths for express dirs
 const public_directory_path = path.join(__dirname, '../public');
 const views_path = path.join(__dirname, '../templates/views')
 const partials_path = path.join(__dirname, '../templates/partials')
@@ -97,7 +98,7 @@ app.get('*', (req, res) => {
         name: 'dave'
     })
 })
-app.listen(3000, () => {
-    console.log('Server is up on port 3000')
+app.listen(port, () => {
+    console.log('Server is up on port ' + port)
 
 })
